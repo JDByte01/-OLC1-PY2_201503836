@@ -1,18 +1,15 @@
 //Required
 const express = require('express');
-const app = express();
 const path = require('path');
+
+const app = express();
 const routes = require('./routes/web');
 
 //Settings
 app.set('port', 3000);
 app.set('views','resources/views');
 app.set('view engine', 'ejs');
-
-//Static files
-
-//Function's
-
+app.use(express.static(path.join(__dirname,'public')));
 
 //URL's
 app.use(routes);
