@@ -1,0 +1,36 @@
+{
+  "name": "-OLC1-PY2_201503836",
+  "version": "1.0.0",
+  "description": "Implementación de un pequeño traductor de C# a Phyton con JISON",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "scss": "node-sass resources/sass/app.scss -o public/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDByte01/-OLC1-PY2_201503836.git"
+  },
+  "keywords": [],
+  "author": "@KByteGt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDByte01/-OLC1-PY2_201503836/issues"
+  },
+  "homepage": "https://github.com/JDByte01/-OLC1-PY2_201503836#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "morgan": "^1.10.0",
+    "node-sass": "^4.14.1",
+    "peer": "^0.5.3",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
