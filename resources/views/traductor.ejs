@@ -2,78 +2,134 @@
 <%- include('partials/nav'); -%>
 <main class="py-4">
     <div class="container">
-      <h1 class="text-muted">Hello, world!</h1>
+    	<div class="d-flex justify-content-between align-items-center mb-3">
+    		<h1 class="text-muted">C# - Python</h1>
+    		<div>
+				<a href="#" class="btn btn-secondary">Abrir</a>
+				<a href="#" class="btn btn-secondary">Guardar</a>
+    		</div>
+    	</div>
 
-		<div class="row">
 
-		  <div class="col-sm-12 col-md-6 col-lg-7">
-		    <div class="card">
-			  <div class="card-header">
-			    <ul class="nav nav-tabs card-header-tabs">
-			      <li class="nav-item">
-			        <a class="nav-link active" href="#">Active</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Link</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-			      </li>
-			    </ul>
-			  </div>
-			  <div class="card-body">
-			    <h5 class="card-title">Special title treatment</h5>
-			    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
+		<div class="row mb-3">
+
+		  	<div class="col-sm-12 col-md-6 col-lg-7">
+			    <div class="card">
+				  	<div class="card-header">
+			  			<div class="d-flex justify-content-between align-items-center mb-3">
+			  				<h4 class="card-title mb-0">Entrada C#</h4>
+			  				<div>
+			  					<a href="#" class="btn btn-primary">Nuevo</a>
+			  				</div>
+			  			</div>
+
+			    		<ul class="nav nav-tabs card-header-tabs">
+			      			<li class="nav-item">
+			        			<a class="nav-link active" href="#">Documento_1.c#</a>
+			      			</li>
+			      			<li class="nav-item">
+					        	<a class="nav-link" href="#">Nuevo</a>
+					      	</li>
+			    		</ul>
+			  		</div>
+			 		<div class="card-body">
+			    		<form action="#" method="POST">
+			    			<div class="form-group">
+								<textarea name="entrada" class="form-control" id="entrada" placeholder='Console.write("Hola Mundo!");'></textarea>
+			    			</div>
+			    			<button type="submit" class="btn btn-primary">Traducir</button>
+			    		</form>
+			  		</div>
+				</div>
+		  	</div>
+
+			<div class="col-sm-12 col-md-6 col-lg-5">
+			    <div class="card">
+			    	<div class="card-header">
+			    		<h4>Salida Python</h4>
+			    	</div>
+				    <div class="card-body">
+				        <form action="#">
+				        	<div class="form-group">
+				        		<textarea name="salida" id="salida" class="form-control" rows="6" placeholder='Print("Hola Mundo!")'></textarea>
+				        	</div>
+				        </form>
+				    </div>
+			    </div>
 			</div>
-		  </div>
+		</div>
 
-		  <div class="col-sm-12 col-md-6 col-lg-5">
-		    <div class="card">
-		      <div class="card-body">
-		        <h5 class="card-title">Special title treatment</h5>
-		        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		      </div>
-		    </div>
-		  </div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12 col-md-6 col-lg-7">
-		    <div class="card text-center">
-			  <div class="card-header">
-			    <ul class="nav nav-tabs card-header-tabs">
-			      <li class="nav-item">
-			        <a class="nav-link active" href="#">Active</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Link</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-			      </li>
-			    </ul>
-			  </div>
-			  <div class="card-body">
-			    <h5 class="card-title">Special title treatment</h5>
-			    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-		  </div>
 
-		  <div class="col-sm-12 col-md-6 col-lg-5">
-		    <div class="card">
-		      <div class="card-body">
-		        <h5 class="card-title">Special title treatment</h5>
-		        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		      </div>
-		    </div>
-		  </div>
+		<div class="row mb-3">
+			<div class="col-sm-12 col-md-6 col-lg-7">
+			    <div class="card">
+			    	<div class="card-header">
+			    		<h4 class="card-title">Tabla de Variables</h4>
+			    	</div>
+			      	<div class="card-body">
+				       <table class="table table-striped table-hover">
+				       	<thead>
+				       		<th scope="col">#</th>
+				       		<th scope="col">Nombre</th>
+				       		<th scope="col">Tipo</th>
+				       		<th scope="col">Fila</th>
+				       	</thead>
+				       	<tbody>
+				       		<tr>
+				       			<th scope="row">1</th>
+				       			<td>Var1</td>
+				       			<td>int</td>
+				       			<td>1</td>
+				       		</tr>
+				       		<tr>
+				       			<th scope="row">2</th>
+				       			<td>Var_string</td>
+				       			<td>String</td>
+				       			<td>34</td>
+				       		</tr>
+				       		<tr>
+				       			<th scope="row">3</th>
+				       			<td>variable_32int</td>
+				       			<td>int</td>
+				       			<td>35</td>
+				       		</tr>
+				       		<tr>
+				       			<th scope="row">4</th>
+				       			<td>FlagHTML</td>
+				       			<td>boolean</td>
+				       			<td>45</td>
+				       		</tr>
+				       	</tbody>
+				       </table>
+			      	</div>
+			    </div>
+			 </div>
+
+			 <div class="col-sm-12 col-md-6 col-lg-5">
+			 	<div class="accordion" id="acordionHTML">
+					<div class="card">
+					  	<div class="card-header">
+					    	<ul class="nav nav-tabs card-header-tabs">
+					      		<li class="nav-item">
+					        		<a class="nav-link active" href="#">HTML</a>
+					      		</li>
+					      		<li class="nav-item">
+					        		<a class="nav-link" href="#">JSON</a>
+					      		</li>
+					    	</ul>
+					 	</div>
+					  	<div class="card-body">
+						    <form action="#">
+						    	<div class="form-group">
+						    		<textarea name="html" id="html" class="form-control" placeholder="Salida HTML"></textarea>
+						    	</div>
+						    </form>
+					  	</div>
+					</div>
+				</div>
+			 </div>
 
 		</div>
-    </div>
+	</div>
 </main>
 <%- include('layout/footer'); -%>
