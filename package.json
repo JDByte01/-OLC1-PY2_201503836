@@ -7,7 +7,8 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "scss": "node-sass resources/sass/app.scss -o public/css/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jison": "jison gramatica.jison && echo \"Gramática compilada, ok!\""
   },
   "repository": {
     "type": "git",
