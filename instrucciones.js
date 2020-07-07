@@ -341,4 +341,5 @@ module.exports.TIPO_INSTRUCCION = TIPO_INSTRUCCION;
 module.exports.TIPO_OPERACION = TIPO_OPERACION;
 module.exports.TIPO_VALOR = TIPO_VALOR;
 module.exports.TIPO_OPCION_SWITCH = TIPO_OPCION_SWITCH;
+module.exports.TIPO_PASO = TIPO_PASO;
 module.exports.API = API;

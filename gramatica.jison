@@ -96,11 +96,13 @@
 		errores.push(err);
 	}
 
-	function getErrores(){
+	reporte: function getErrores () {
 		var temp = errores;
 		errores = [];
 		return temp;
 	}
+
+	exports.reporte = function () { return errores; };
 
 %}
 
@@ -118,7 +120,7 @@
 %% /* Definición de la gramática */
 
 ini
-	: sentencias EOF { console.log(" |> AST generado..."); console.log(" ** Errores: ", getErrores()); return $1; }
+	: sentencias EOF { console.log(" |> AST generado..."); /*console.log(" ** Errores: ", getErrores());*/ return $1; }
 ;
 
 sentencias
