@@ -41,9 +41,9 @@
 			      			<li class="nav-item">
 			        			<a class="nav-link active" href="#"><%= tabTitle %></a>
 			      			</li>
-			      			<li class="nav-item">
+			      			<!--<li class="nav-item">
 			        			<a class="nav-link" href="#">Archivo2.cs</a>
-			      			</li>
+			      			</li> -->
 			      			<li class="nav-item">
 					        	<a class="nav-link" href="#"><i class="material-icons">add</i></a>
 					      	</li>
@@ -52,7 +52,7 @@
 			 		<div class="card-body">
 			    		<form action="/translate" method="POST">
 			    			<div class="form-group">
-								<textarea name="entrada" class="form-control" id="entrada" placeholder='Console.write("Hola Mundo!");'></textarea>
+								<textarea name="entrada" class="form-control" id="entrada" rows="11" placeholder='Console.write("Hola Mundo!");'></textarea>
 			    			</div>
 			    			<button type="submit" class="btn btn-primary d-flex align-items-center">
 			    				<span>Traducir &nbsp;</span>
@@ -71,7 +71,7 @@
 				    <div class="card-body">
 				        <form action="#">
 				        	<div class="form-group">
-				        		<textarea name="salida" id="salida" class="form-control" rows="6" placeholder='Print("Hola Mundo!")'></textarea>
+				        		<textarea name="salida" id="salida" class="form-control" rows="15" placeholder='Print("Hola Mundo!")'></textarea>
 				        	</div>
 				        </form>
 				    </div>

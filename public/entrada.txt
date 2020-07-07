@@ -3,122 +3,24 @@
   Variables
 ============*/
 
-int varInt1 = 0;
+int varInt1 = 0.4;
 string varString1 = "Esto es una cadena";
 bool flag1;
 char token = '3';
 String html = '<h1>hola Mundo!</h1>';
 flag1 = false;
-var1 = 5+8*9;
+var1 = 5.3+8*9;
+html = '<h1 style="white">hola Mundo!</h1>';
 
 int id1 , id2 , id3  id4 , id5 = 100;
 
 string var1, var2, var3, var4, var5;
 
-/*===========
-  Main
-============*/
-
-void main ( ){
-	Console.Write(4+3+2)
-}
-
-void main ( ){
-}
-
-/*===========
-   Metodos
-============*/
-
-$$$$$
-@@@
-
-void metodoA (int a, int b){
-	return a + b;
-}
-
-void metodoB ( int a){
-}
-
-void metodoC (){
-}
-
-void metodoD (){
-	break;
-}
-
-/*===========
-  Funciones
-============*/
-
-int getId (){
-	return id;
-}
-
-int getId (int x){
-	return id;
-}
-
-int getId (){
-	return id;
-}
-
-/*===========
-  IF - Else
-============*/
-
-if (b > a){
-	Console.Write("b mayor que a");
-}else if(a != b){
-	Console.Write("a y b son iguales");
-}
-
-if(true || false){
-
-} else if (fals && true){
-	Console.Write('<p style="text-red">parrafo</p>');
-} else if ( true){
-
-} else {
-
-}
-
-if(a == (3+34)){
-
-}
-
-
-
-switch(valor){
-	case 1:
-		precio = 55;
-		break;
-	case 2:
-		precio = 25;
-	case 3:
-		precio = 40;
-	default:
-		Console.Write("No válido. Escoja 1, 2, o 3.");
-}
-
-for (int a=0; a<10; a++){
 Console.Write("el valor de a es: " + a);
-}
-
-while(a < 10){
-Console.Write("el valor de a es: " + a);
-}
-
-int a = 1;
-do {
-Console.Write("el valor de a es: " + a);
-} while(a < 5);
-
-Console.Write("el valor de a es: " + a);
-
+@sdf
 return;
-return 5*5;
-
+return (5*5)/5;
+%%%434
 break;
 
 continue;
