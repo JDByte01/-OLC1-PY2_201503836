@@ -95,7 +95,7 @@
 				    				&nbsp;
 				    				<a href="#" data-toggle="collapse" data-target="#collapseVariables" aria-expanded="false" aria-controls="collapseVariables">Tabla de Variables</a>
         						</h5>
-				    			<span class="text-primary">Variables 3</span>
+				    			<span class="text-primary">Variables <%= variables.length %></span>
 				    		</div>
 				    	</div>
 
@@ -111,34 +111,25 @@
 						       		<th scope="col">Columna</th>
 						       	</thead>
 						       	<tbody>
-						       		<tr>
-						       			<th scope="row">1</th>
-						       			<td>Var1</td>
-						       			<td>int</td>
-						       			<td>1</td>
-						       			<td>1</td>
+						       	<% if (variables.length != 0) { -%>
+					       			<% var i = 1 -%>
+						       		<% variables.forEach(variable => { %>
+									<tr>
+						       			<th scope="row"><%= i%></th>
+						       			<td><%= variable.nombre %></td>
+						       			<td><%= variable.tipo %></td>
+						       			<td><%= variable.fila %></td>
+						       			<td><%= variable.columna %></td>
 						       		</tr>
-						       		<tr>
-						       			<th scope="row">2</th>
-						       			<td>Var_string</td>
-						       			<td>String</td>
-						       			<td>34</td>
-						       			<td>34</td>
+						       		<% i++ -%>
+						       		<% })%>
+					       		<% } else { -%>
+									<tr>
+						       			<td  colspan="5"><p class="text-center text-primary">No se encontraron variables... :'(</p></td>
 						       		</tr>
-						       		<tr>
-						       			<th scope="row">3</th>
-						       			<td>variable_32int</td>
-						       			<td>int</td>
-						       			<td>35</td>
-						       			<td>1</td>
-						       		</tr>
-						       		<tr>
-						       			<th scope="row">4</th>
-						       			<td>FlagHTML</td>
-						       			<td>boolean</td>
-						       			<td>45</td>
-						       			<td>1</td>
-						       		</tr>
+					       		<% } -%>
+
+
 						       	</tbody>
 						       </table>
 					      	</div>
@@ -166,7 +157,7 @@
 									<div class="col-sm-12 col-md-6">
 										<div class="form-group">
 											<label for="html"> HTML</label>
-								    		<textarea name="html" id="html" class="form-control" placeholder="Salida HTML"></textarea>
+								    		<textarea name="html" id="html" class="form-control" placeholder="Salida HTML"><% if (html != "") { -%><%= html %><% } -%></textarea>
 								    	</div>
 									</div>
 									<div class="col-sm-12 col-md-6">
@@ -194,7 +185,7 @@
 				    				&nbsp;
 				    				<a href="#" data-toggle="collapse" data-target="#collapseErrores" aria-expanded="false" aria-controls="collapseErrores">Errores</a>
 				    			</h5>
-				    			<span class="text-primary">Léxicos & Sintácticos: <%= errores.length %></span>
+				    			<span class="text-primary">Léxicos & Sintácticos <%= errores.length %></span>
 				    		</div>
 				    	</div>
 

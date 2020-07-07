@@ -91,19 +91,24 @@
 
 	//Lista de errores
 	var errores = [];
+	var variables = [];
+	var html = "";
 
 	function error(err){
 		errores.push(err);
 	}
 
-	reporte: function getErrores () {
-		var temp = errores;
-		errores = [];
-		return temp;
+	function variable(tipo, id, fila, columna){
+		variables.push({tipo: tipo, nombre: id, fila: fila, columna: columna});
+	}
+
+	function docHtml(txt){
+		html += txt + "\n";
 	}
 
 	exports.reporte = function () { var temp = errores; errores = []; return temp; };
-
+	exports.tablaVar = function () { var temp = variables; variables = []; return temp; };
+	exports.docHtml = function () { var temp = html; html = ""; return temp;};
 %}
 
 /* Asociación de operadores y precedencia */
@@ -147,8 +152,8 @@ sentencia
 	| PR_ELSE '{' sentencias_m '}' 								{ $$ = API.nuevoElse($3); }
 	| PR_ELSE '{' '}' 											{ $$ = API.nuevoElse(undefined); }
 	| PR_SWITCH '(' exp_num ')' '{' lista_case '}' 				{ $$ = API.nuevoSwitch($3, $6); }
-	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 	{ $$ = API.nuevoFor($4, $6, $8, $10, $13, $3); }
-	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}'				{ $$ = API.nuevoFor($4, $6, $8, $10, undefined, $3); }
+	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 	{ $$ = API.nuevoFor($4, $6, $8, $10, $13, $3); variable($3, $4, this._$.first_line, this._$.first_column); }
+	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}'				{ $$ = API.nuevoFor($4, $6, $8, $10, undefined, $3); variable($3, $4, this._$.first_line, this._$.first_column);}
 	| PR_FOR '(' ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 			{ $$ = API.nuevoFor($3, $5, $7, $11, $12, undefined); }
 	| PR_FOR '(' ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}' 						{ $$ = API.nuevoFor($3, $5, $7, $11, undefined, undefined); }
 	| PR_WHILE '(' exp_logica ')' '{' sentencias_m '}' 										{ $$ = API.nuevoWhile($3, $6); }
@@ -187,7 +192,7 @@ parametros
 ;
 
 parametro
-	: tipo_dato ID { $$ = API.nuevoParametro($1, $2); }
+	: tipo_dato ID { $$ = API.nuevoParametro($1, $2); /*variable($1, $2, this._$.first_line, this._$.first_column);*/ }
 ;
 
 /*
@@ -235,8 +240,8 @@ sentencia_m
 	| PR_ELSE '{' sentencias_m '}' 								{ $$ = API.nuevoElse($3); }
 	| PR_ELSE '{' '}' 											{ $$ = API.nuevoElse(undefined); }
 	| PR_SWITCH '(' exp_num ')' '{' lista_case '}' 				{ $$ = API.nuevoSwitch($3, $6); }
-	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 	{ $$ = API.nuevoFor($4, $6, $8, $10, $13, $3); }
-	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}'				{ $$ = API.nuevoFor($4, $6, $8, $10, undefined, $3); }
+	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 	{ $$ = API.nuevoFor($4, $6, $8, $10, $13, $3); variable($3, $4, this._$.first_line, this._$.first_column);}
+	| PR_FOR '(' tipo_dato ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}'				{ $$ = API.nuevoFor($4, $6, $8, $10, undefined, $3); variable($3, $4, this._$.first_line, this._$.first_column);}
 	| PR_FOR '(' ID '=' exp_num ';' exp_logica ';' paso ')' '{' sentencias_m '}' 			{ $$ = API.nuevoFor($3, $5, $7, $11, $12, undefined); }
 	| PR_FOR '(' ID '=' exp_num ';' exp_logica ';' paso ')' '{' '}' 						{ $$ = API.nuevoFor($3, $5, $7, $11, undefined, undefined); }
 	| PR_WHILE '(' exp_logica ')' '{' sentencias_m '}' 										{ $$ = API.nuevoWhile($3, $6); }
@@ -293,7 +298,7 @@ exp_num
 	| FLOTANTE 					{ $$ = API.nuevoValor(Number($1), TIPO_VALOR.DOUBLE); }
 	| CARACTER 					{ $$ = API.nuevoValor($1, TIPO_VALOR.CHAR); }
 	| CADENA 					{ $$ = API.nuevoValor($1, TIPO_VALOR.STRING); }
-	| HTML 						{ $$ = API.nuevoValor($1, TIPO_VALOR.HTML); }
+	| HTML 						{ $$ = API.nuevoValor($1, TIPO_VALOR.HTML); docHtml($1); }
 	| TRUE 						{ $$ = API.nuevoValor($1, TIPO_VALOR.BOOL); }
 	| FALSE 					{ $$ = API.nuevoValor($1, TIPO_VALOR.BOOL); }
 	| ID 						{ $$ = API.nuevoValor($1, TIPO_VALOR.ID); }

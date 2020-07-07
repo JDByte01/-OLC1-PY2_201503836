@@ -16,7 +16,11 @@ var temp;
 function exec (input) {
     temp = parser.parse(input);
     tablaErrores = parser.reporte();
+    tablaId = parser.tablaVar();
+    txtHtml = parser.docHtml();
     console.log(tablaErrores);
+    console.log(tablaId);
+    console.log(txtHtml);
     return temp;
 }
 
@@ -36,7 +40,10 @@ Route.get('/translate', (req, res) => {
       navItem:'translate',
       tabTitle: nombreArchivo,
       txtIn: "",
-      errores: []
+      txtOut: "",
+      html: "",
+      errores: [],
+      variables: []
     }
   );
 });
@@ -53,7 +60,10 @@ Route.post('/translate', (req, res) => {
       navItem:'translate',
       tabTitle: nombreArchivo,
       txtIn: txtEntrada,
-      errores: tablaErrores
+      txtOut: txtSalida,
+      html: txtHtml,
+      errores: tablaErrores,
+      variables: tablaId
     }
   );
 });
