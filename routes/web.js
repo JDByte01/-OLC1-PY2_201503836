@@ -1,7 +1,7 @@
 const express = require('express');
 const Route = express.Router();
 
-var parser = require("./../gramatica").parser;
+var parser = require("./../gramatica");
 
 var nombreArchivo = "Untitle"
 var txtEntrada = "";
@@ -9,11 +9,15 @@ var txtSalida = "";
 var tablaId;
 var txtHtml = "";
 var txtJson = "";
-var tablaErrores;
+var tablaErrores = [];
+var temp;
 
 //Funciones
 function exec (input) {
-    return parser.parse(input);
+    temp = parser.parse(input);
+    tablaErrores = parser.reporte();
+    console.log(tablaErrores);
+    return temp;
 }
 
 //Rutas
@@ -30,14 +34,28 @@ Route.get('/translate', (req, res) => {
     {
       title:'Traductor | CPy',
       navItem:'translate',
-      tabTitle: nombreArchivo
+      tabTitle: nombreArchivo,
+      txtIn: "",
+      errores: []
     }
   );
 });
 
 Route.post('/translate', (req, res) => {
   let txt = req.body.entrada;
-  res.send(exec(txt));
+  txtEntrada = txt;
+  exec(txt);
+  //res.send(exec(txt));
+  //res.location('back');
+  res.render('traductor',
+    {
+      title:'Traductor | CPy',
+      navItem:'translate',
+      tabTitle: nombreArchivo,
+      txtIn: txtEntrada,
+      errores: tablaErrores
+    }
+  );
 });
 
 module.exports = Route;

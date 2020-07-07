@@ -78,7 +78,7 @@
 
 .   {
 		//console.log('Este es un error léxico: ' + yytext + ', en la linea: ' + yylloc.first_line + ', en la columna: ' + yylloc.first_column);
-		error({tipo:'Léxico', contenido: yytext , fila: yylloc.first_line, columna:  yylloc.first_column });
+		error({tipo:'Léxico', contenido: 'El caracter << ' + yytext + ' >> no pertenece al lenguaje' , fila: yylloc.first_line, columna:  yylloc.first_column });
 	}
 
 /lex
@@ -102,7 +102,7 @@
 		return temp;
 	}
 
-	exports.reporte = function () { return errores; };
+	exports.reporte = function () { var temp = errores; errores = []; return temp; };
 
 %}
 
@@ -120,7 +120,7 @@
 %% /* Definición de la gramática */
 
 ini
-	: sentencias EOF { console.log(" |> AST generado..."); /*console.log(" ** Errores: ", getErrores());*/ return $1; }
+	: sentencias EOF { console.log(" |> AST generado..."); return $1; }
 ;
 
 sentencias
@@ -164,7 +164,7 @@ sentencia
 	| PR_VOID PR_MAIN '(' ')' '{' '}' 						{ $$ = API.nuevoMain(undefined); }
 	| error {
 				//console.log('Este es un error sintáctico: ' + yytext + ', en la linea: ' + this._$.first_line + ', en la columna: ' + this._$.first_column);
-				error({tipo:'Sintactico', contenido: yytext , fila: this._$.first_line, columna:  this._$.first_column })
+				error({tipo:'Sintactico', contenido: 'Se esperava [ ; | } | Terminal ] , se encontró: << ' + yytext + ' >>' , fila: this._$.first_line, columna:  this._$.first_column })
 			}
 ;
 
@@ -250,7 +250,7 @@ sentencia_m
 	| PR_CONTINUE ';' 										{ $$ = API.nuevoContinue(); }
 	| error {
 				//console.log('Este es un error sintáctico: ' + yytext + ', en la linea: ' + this._$.first_line + ', en la columna: ' + this._$.first_column);
-				error({tipo:'Sintactico', contenido: yytext , fila: this._$.first_line, columna:  this._$.first_column })
+				error({tipo:'Sintactico', contenido: 'Se esperava [ ; | } | Terminal ] , se encontró: << ' + yytext + ' >>' , fila: this._$.first_line, columna:  this._$.first_column })
 			}
 ;
 
