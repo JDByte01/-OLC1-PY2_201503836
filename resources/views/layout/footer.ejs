@@ -2,6 +2,22 @@
 		<p class='text-center text-muted'>José Daniel López Gonzalez | 201503836<br/>Facultad de Ingenieria - Organización de lenguajes y compiladores 1<br>Universidad de San Carlos De Guatemala</p>
 	</footer>
 
+    <!-- JSON Tree View -->
+    <script src="js/jsonview.bundle.js"></script>
+    <script type="text/javascript">
+        fetch('ast.json')
+        .then((res)=> {
+          return res.text();
+        })
+        .then((data) => {
+          const tree = JsonView.createTree(data);
+          JsonView.render(tree, document.querySelector('.root'));
+          JsonView.expandChildren(tree);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

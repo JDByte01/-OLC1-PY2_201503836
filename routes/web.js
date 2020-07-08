@@ -2,6 +2,7 @@ const express = require('express');
 const Route = express.Router();
 
 var parser = require("./../gramatica");
+var fs = require('fs');
 
 var nombreArchivo = "Untitle"
 var txtEntrada = "";
@@ -10,18 +11,39 @@ var tablaId;
 var txtHtml = "";
 var txtJson = "";
 var tablaErrores = [];
-var temp;
+var ast;
 
 //Funciones
 function exec (input) {
-    temp = parser.parse(input);
+  try{
+    ast = parser.parse(input);
     tablaErrores = parser.reporte();
     tablaId = parser.tablaVar();
     txtHtml = parser.docHtml();
-    console.log(tablaErrores);
-    console.log(tablaId);
-    console.log(txtHtml);
-    return temp;
+    txtJson = getJSON(txtHtml);
+    fs.writeFileSync('./public/ast.json', JSON.stringify(ast, null, 2));
+  } catch (e){
+    console.error(e);
+    return;
+  }
+  console.log(tablaErrores);
+  console.log(tablaId);
+  console.log(txtHtml);
+  console.log(txtJson);
+  return ast;
+}
+
+function getJSON(txt){
+  //var parser = Components.classes["@mozilla.org/xmlextras/domparser;1"]
+  //           .createInstance(Components.interfaces.nsIDOMParser);
+  //var doc = parser.parseFromString(txt, "application/xml");
+//  var temp = DOM(txt);
+  //console.log(doc);
+  //var html = doc.outerHTML;
+  var html = txt;
+  var data = { html: html};
+  console.log(txt);
+  return JSON.stringify(data);
 }
 
 //Rutas
@@ -42,6 +64,7 @@ Route.get('/translate', (req, res) => {
       txtIn: "",
       txtOut: "",
       html: "",
+      json: "",
       errores: [],
       variables: []
     }
@@ -62,6 +85,7 @@ Route.post('/translate', (req, res) => {
       txtIn: txtEntrada,
       txtOut: txtSalida,
       html: txtHtml,
+      json: txtJson,
       errores: tablaErrores,
       variables: tablaId
     }

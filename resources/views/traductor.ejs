@@ -163,7 +163,7 @@
 									<div class="col-sm-12 col-md-6">
 										<div class="form-group">
 											<label for="json"> JSON</label>
-								    		<textarea name="json" id="json" class="form-control" placeholder="Salida JSON"></textarea>
+								    		<textarea name="json" id="json" class="form-control" placeholder="Salida JSON"><% if (json != "") { -%><%= json %><% } -%></textarea>
 								    	</div>
 									</div>
 								</div>
@@ -239,7 +239,7 @@
 						</div>
 						<div class="collapse hidden" id="collapseAST" aria-labelledby="headingAST" data-parent="#acordionAST">
 							<div class="card-body">
-
+								<div class="root"></div>
 							</div>
 						</div>
 					</div>

@@ -161,10 +161,10 @@ sentencia
 	| PR_DO '{' sentencias_m '}' PR_WHILE '(' exp_logica ')' ';' 							{ $$ = API.nuevoDoWhile($7, $3); }
 	| PR_DO '{' '}' PR_WHILE '(' exp_logica ')' ';' 										{ $$ = API.nuevoDoWhile($6, undefined); }
 	| PR_CONSOLE '.' PR_WRITE '(' exp_num ')' ';' 			{ $$ = API.nuevoImprimir($5); }
-	| PR_RETURN exp_num ';'									{ $$ = API.nuevoReturnE($2); }
-	| PR_RETURN ';' 										{ $$ = API.nuevoReturn(); }
-	| PR_BREAK ';' 											{ $$ = API.nuevoBreak(); }
-	| PR_CONTINUE ';' 										{ $$ = API.nuevoContinue(); }
+//	| PR_RETURN exp_num ';'									{ $$ = API.nuevoReturnE($2); }
+//	| PR_RETURN ';' 										{ $$ = API.nuevoReturn(); }
+//	| PR_BREAK ';' 											{ $$ = API.nuevoBreak(); }
+//	| PR_CONTINUE ';' 										{ $$ = API.nuevoContinue(); }
 	| PR_VOID PR_MAIN '(' ')' '{' sentencias_m '}' 			{ $$ = API.nuevoMain($6); }
 	| PR_VOID PR_MAIN '(' ')' '{' '}' 						{ $$ = API.nuevoMain(undefined); }
 	| error {
@@ -283,7 +283,7 @@ exp_cadena
 	: exp_cadena '+' exp_cadena     { $$ = API.nuevoOperacionBinaria($1, $3, TIPO_OPERACION.CONCATENACION); }
 	| CADENA 						{ $$ = API.nuevoValor($1, TIPO_VALOR.STRING); }
 	| CARACTER 						{ $$ = API.nuevoValor($1, TIPO_VALOR.CHAR); }
-	| HTML 							{ $$ = API.nuevoValor($1, TIPO_VALOR.HTML); }
+	| HTML 							{ $$ = "'" + API.nuevoValor($1, TIPO_VALOR.HTML) + "'"; }
 	| exp_num						{ $$ = $1; }
 ;*/
 
