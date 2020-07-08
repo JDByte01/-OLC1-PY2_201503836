@@ -72,7 +72,7 @@
 				    <div class="card-body">
 				        <form action="#">
 				        	<div class="form-group">
-				        		<textarea name="salida" id="salida" class="form-control" rows="15" placeholder='Print("Hola Mundo!")'></textarea>
+				        		<textarea name="salida" id="salida" class="form-control" rows="15" placeholder='Print("Hola Mundo!")'><% if (txtOut != "") { -%><%= txtOut %><% } -%></textarea>
 				        	</div>
 				        </form>
 				    </div>

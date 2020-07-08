@@ -2,6 +2,7 @@ const express = require('express');
 const Route = express.Router();
 
 var parser = require("./../gramatica");
+var translate = require("./../traductor");
 var fs = require('fs');
 
 var nombreArchivo = "Untitle"
@@ -21,6 +22,7 @@ function exec (input) {
     tablaId = parser.tablaVar();
     txtHtml = parser.docHtml();
     txtJson = getJSON(txtHtml);
+    txtSalida = translate.getCode(ast);
     fs.writeFileSync('./public/ast.json', JSON.stringify(ast, null, 2));
   } catch (e){
     console.error(e);
@@ -30,7 +32,9 @@ function exec (input) {
   console.log(tablaId);
   console.log(txtHtml);
   console.log(txtJson);
+  console.log(txtSalida);
   return ast;
+
 }
 
 function getJSON(txt){

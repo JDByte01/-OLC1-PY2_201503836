@@ -1,79 +1,53 @@
 [
   {
-    "tipo": "IN_DECLARACION",
-    "identificadores": [
-      "varInt1"
-    ],
-    "tipo_dato": "int",
-    "expresion": {
-      "tipo": "VAL_DOUBLE",
-      "valor": 0.4
-    }
-  },
-  {
-    "tipo": "IN_DECLARACION",
-    "identificadores": [
-      "varString1"
-    ],
-    "tipo_dato": "string",
-    "expresion": {
-      "tipo": "VAL_STRING",
-      "valor": "Esto es una cadena"
-    }
-  },
-  {
-    "tipo": "IN_DECLARACION",
-    "identificadores": [
-      "flag1"
-    ],
-    "tipo_dato": "bool"
-  },
-  {
-    "tipo": "IN_DECLARACION",
-    "identificadores": [
-      "token"
-    ],
-    "tipo_dato": "char",
-    "expresion": {
-      "tipo": "VAL_CHAR",
-      "valor": "3"
-    }
-  },
-  {
-    "tipo": "IN_DECLARACION",
-    "identificadores": [
-      "html"
-    ],
-    "tipo_dato": "String",
-    "expresion": {
-      "tipo": "HTML",
-      "valor": "<h1>hola Mundo!</h1>"
-    }
-  },
-  {
-    "tipo": "IN_ASIGNACION",
-    "identificador": "flag1",
-    "expresion": {
-      "tipo": "VAL_BOOL",
-      "valor": "false"
-    }
-  },
-  {
-    "tipo": "IN_ASIGNACION",
-    "identificador": "var1",
+    "tipo": "IN_IMPRIMIR",
     "expresion": {
       "opIzq": {
-        "tipo": "VAL_DOUBLE",
-        "valor": 5.3
+        "tipo": "VAL_STRING",
+        "valor": "Texto a: "
+      },
+      "opDer": {
+        "tipo": "VAL_STRING",
+        "valor": "Hola mundo!"
+      },
+      "tipo": "OP_SUMA"
+    }
+  },
+  {
+    "tipo": "IN_IMPRIMIR",
+    "expresion": {
+      "opIzq": {
+        "tipo": "VAL_INT",
+        "valor": 43
       },
       "opDer": {
         "opIzq": {
-          "tipo": "VAL_INT",
-          "valor": 8
+          "tipo": "AGRUPACION",
+          "expresion": {
+            "opIzq": {
+              "tipo": "AGRUPACION",
+              "expresion": {
+                "opIzq": {
+                  "tipo": "VAL_INT",
+                  "valor": 23
+                },
+                "opDer": {
+                  "tipo": "VAL_INT",
+                  "valor": 43
+                },
+                "tipo": "OP_DIVISION"
+              }
+            },
+            "opDer": {
+              "tipo": "VAL_INT",
+              "valor": 23
+            },
+            "tipo": "OP_SUMA"
+          }
         },
         "opDer": {
           "tipo": "VAL_INT",
-          "valor": 9
+          "valor": 5
         },
         "tipo": "OP_MULTIPLICACION"
       },
@@ -81,64 +55,74 @@
     }
   },
   {
-    "tipo": "IN_ASIGNACION",
-    "identificador": "html",
-    "expresion": {
-      "tipo": "HTML",
-      "valor": "<h1 style=\"white\">hola Mundo!</h1>"
-    }
-  },
-  "id4",
-  ",",
-  "id5",
-  {
-    "tipo": "IN_ASIGNACION",
-    "identificador": "id5",
-    "expresion": {
-      "tipo": "VAL_INT",
-      "valor": 100
-    }
-  },
-  {
     "tipo": "IN_DECLARACION",
     "identificadores": [
-      "var1",
-      "var2",
-      "var3",
-      "var4",
-      "var5"
+      "a"
     ],
-    "tipo_dato": "string"
+    "tipo_dato": "int",
+    "expresion": {
+      "tipo": "VAL_INT",
+      "valor": 1
+    }
   },
   {
-    "tipo": "IN_IMPRIMIR",
-    "expresion": {
+    "tipo": "IN_DO_WHILE",
+    "condicion": {
       "opIzq": {
-        "tipo": "VAL_STRING",
-        "valor": "el valor de a es: "
-      },
-      "opDer": {
         "tipo": "VAL_ID",
         "valor": "a"
       },
-      "tipo": "OP_SUMA"
-    }
-  },
-  "return",
-  ";",
-  "return",
-  "(",
-  "5",
-  "*",
-  "5",
-  ")",
-  "/",
-  "5",
-  ";",
-  "434",
-  "break",
-  ";",
-  "continue",
-  ";",
-  ""
+      "opDer": {
+        "tipo": "VAL_INT",
+        "valor": 5
+      },
+      "tipo": "OP_MENOR"
+    },
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "opIzq": {
+            "tipo": "VAL_STRING",
+            "valor": "el valor de a es: "
+          },
+          "opDer": {
+            "tipo": "VAL_ID",
+            "valor": "a"
+          },
+          "tipo": "OP_SUMA"
+        }
+      },
+      {
+        "tipo": "IN_WHILE",
+        "condicion": {
+          "opIzq": {
+            "tipo": "VAL_ID",
+            "valor": "a"
+          },
+          "opDer": {
+            "tipo": "VAL_INT",
+            "valor": 10
+          },
+          "tipo": "OP_MENOR"
+        },
+        "instrucciones": [
+          {
+            "tipo": "IN_IMPRIMIR",
+            "expresion": {
+              "opIzq": {
+                "tipo": "VAL_STRING",
+                "valor": "el valor de a es: "
+              },
+              "opDer": {
+                "tipo": "VAL_ID",
+                "valor": "a"
+              },
+              "tipo": "OP_SUMA"
+            }
+          }
+        ]
+      }
+    ]
+  }
 ]

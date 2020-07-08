@@ -273,7 +273,7 @@ case 90:
  this.$ = API.nuevoOperacionBinaria($$[$0-2], $$[$0], TIPO_OPERACION.DIVISION); 
 break;
 case 91:
- this.$ = $$[$0-1]; 
+ this.$ = API.nuevoAgrupacion($$[$0-1]); 
 break;
 case 92:
  this.$ = API.nuevoValor(Number($$[$0]), TIPO_VALOR.INT); 

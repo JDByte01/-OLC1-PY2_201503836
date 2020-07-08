@@ -23,7 +23,8 @@ const TIPO_OPERACION = {
 	DOBLE_IGUAL: 	'OP_DOBLE_IGUAL',
 	DISTINTO: 		'OP_DISTINTO',
 	NEGATIVO: 		'OP_NEGATIVO',
-	CONCATENACION: 	'OP_CONCATENACION'
+	CONCATENACION: 	'OP_CONCATENACION',
+	AGRUPACION: 	'AGRUPACION'
 }
 
 const TIPO_INSTRUCCION = {
@@ -40,6 +41,7 @@ const TIPO_INSTRUCCION = {
 	WHILE: 			'IN_WHILE',
 	DO_WHILE: 		'IN_DO_WHILE',
 	IMPRIMIR: 		'IN_IMPRIMIR',
+	RETURN_E: 		'IN_RETURN',
 	RETURN: 		'IN_RETURN',
 	BREAK: 			'IN_BREAK',
 	CONTINUE: 		'IN_CONTINUE',
@@ -284,7 +286,7 @@ const API = {
 	//RETURN exp ;
 	nuevoReturnE: function(exp){
 		return {
-			tipo: TIPO_INSTRUCCION.RETURN,
+			tipo: TIPO_INSTRUCCION.RETURN_E,
 			expresion: exp
 		}
 	},
@@ -331,6 +333,15 @@ const API = {
 		return{
 			tipo: TIPO_PASO.DECREMENTO,
 			identificador: id
+		}
+	},
+
+	//Agrupacion
+	// ( exp )
+	nuevoAgrupacion: function(exp){
+		return {
+			tipo: TIPO_OPERACION.AGRUPACION,
+			expresion: exp
 		}
 	}
 }

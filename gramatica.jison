@@ -293,7 +293,7 @@ exp_num
 	| exp_num '-' exp_num 		{ $$ = API.nuevoOperacionBinaria($1, $3, TIPO_OPERACION.RESTA); }
 	| exp_num '*' exp_num 		{ $$ = API.nuevoOperacionBinaria($1, $3, TIPO_OPERACION.MULTIPLICACION); }
 	| exp_num '/' exp_num 		{ $$ = API.nuevoOperacionBinaria($1, $3, TIPO_OPERACION.DIVISION); }
-	| '(' exp_num ')' 			{ $$ = $2; }
+	| '(' exp_num ')' 			{ $$ = API.nuevoAgrupacion($2); }
 	| ENTERO 					{ $$ = API.nuevoValor(Number($1), TIPO_VALOR.INT); }
 	| FLOTANTE 					{ $$ = API.nuevoValor(Number($1), TIPO_VALOR.DOUBLE); }
 	| CARACTER 					{ $$ = API.nuevoValor($1, TIPO_VALOR.CHAR); }
