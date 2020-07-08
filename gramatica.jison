@@ -144,7 +144,7 @@ sentencia
 	| tipo_dato ID '(' parametros ')' '{' sentencias_m '}' 		{ $$ = API.nuevoFuncion($1, $2, $4, $7); }
 	| tipo_dato ID '(' parametros ')' '{' '}' 					{ $$ = API.nuevoFuncion($1, $2, $4, undefined); }
 	| tipo_dato ID '(' ')' '{' sentencias_m '}' 				{ $$ = API.nuevoFuncion($1, $2, undefined, $6); }
-//	| tipo_dato ID '(' ')' '{' '}' 								{ $$ = API.nuevoFuncion($1, $2, undefined, undefined); }
+	| tipo_dato ID '(' ')' '{' '}' 								{ $$ = API.nuevoFuncion($1, $2, undefined, undefined); }
 	| PR_IF '(' exp_logica ')' '{' sentencias_m '}' 			{ $$ = API.nuevoIf($3, $6); }
 	| PR_IF '(' exp_logica ')' '{' '}' 							{ $$ = API.nuevoIf($3, undefined); }
 	| PR_ELSE PR_IF '(' exp_logica ')' '{' sentencias_m '}' 	{ $$ = API.nuevoElseIf($4, $7); }

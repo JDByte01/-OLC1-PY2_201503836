@@ -1,26 +1,12 @@
 [
   {
-    "tipo": "IN_IMPRIMIR",
+    "tipo": "IN_DECLARACION",
+    "identificadores": [
+      "a"
+    ],
+    "tipo_dato": "int",
     "expresion": {
       "opIzq": {
-        "tipo": "VAL_STRING",
-        "valor": "Texto a: "
-      },
-      "opDer": {
-        "tipo": "VAL_STRING",
-        "valor": "Hola mundo!"
-      },
-      "tipo": "OP_SUMA"
-    }
-  },
-  {
-    "tipo": "IN_IMPRIMIR",
-    "expresion": {
-      "opIzq": {
-        "tipo": "VAL_INT",
-        "valor": 43
-      },
-      "opDer": {
         "opIzq": {
           "tipo": "AGRUPACION",
           "expresion": {
@@ -29,151 +15,847 @@
               "expresion": {
                 "opIzq": {
                   "tipo": "VAL_INT",
-                  "valor": 23
+                  "valor": 3
                 },
                 "opDer": {
                   "tipo": "VAL_INT",
-                  "valor": 43
+                  "valor": 1
                 },
-                "tipo": "OP_DIVISION"
+                "tipo": "OP_RESTA"
               }
             },
             "opDer": {
-              "tipo": "VAL_INT",
-              "valor": 23
+              "tipo": "AGRUPACION",
+              "expresion": {
+                "opIzq": {
+                  "tipo": "VAL_INT",
+                  "valor": 12
+                },
+                "opDer": {
+                  "tipo": "VAL_INT",
+                  "valor": 28
+                },
+                "tipo": "OP_SUMA"
+              }
             },
-            "tipo": "OP_SUMA"
+            "tipo": "OP_MULTIPLICACION"
           }
         },
         "opDer": {
           "tipo": "VAL_INT",
-          "valor": 5
+          "valor": 3
         },
-        "tipo": "OP_MULTIPLICACION"
+        "tipo": "OP_DIVISION"
       },
-      "tipo": "OP_SUMA"
+      "opDer": {
+        "opIzq": {
+          "tipo": "VAL_INT",
+          "valor": 333
+        },
+        "opDer": {
+          "tipo": "VAL_INT",
+          "valor": 111
+        },
+        "tipo": "OP_DIVISION"
+      },
+      "tipo": "OP_RESTA"
     }
   },
   {
     "tipo": "IN_DECLARACION",
     "identificadores": [
-      "a"
+      "num1",
+      "num2",
+      "num3",
+      "num4",
+      "num5"
     ],
-    "tipo_dato": "int",
+    "tipo_dato": "double"
+  },
+  {
+    "tipo": "IN_DECLARACION",
+    "identificadores": [
+      "saludo"
+    ],
+    "tipo_dato": "string",
     "expresion": {
-      "tipo": "VAL_INT",
-      "valor": 1
+      "opIzq": {
+        "tipo": "VAL_STRING",
+        "valor": "Saludos amigos uwu "
+      },
+      "opDer": {
+        "tipo": "HTML",
+        "valor": "A ver que tal sale esto GG"
+      },
+      "tipo": "OP_SUMA"
     }
   },
   {
-    "tipo": "IN_DO_WHILE",
-    "condicion": {
-      "opIzq": {
-        "tipo": "VAL_ID",
-        "valor": "a"
+    "tipo": "IN_FUNCION",
+    "identificador": "suma",
+    "tipo_dato": "double",
+    "parametros": [
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "a",
+        "tipo_dato": "int"
       },
-      "opDer": {
-        "tipo": "VAL_INT",
-        "valor": 5
-      },
-      "tipo": "OP_MENOR"
-    },
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "b",
+        "tipo_dato": "double"
+      }
+    ],
     "instrucciones": [
       {
         "tipo": "IN_IMPRIMIR",
         "expresion": {
-          "opIzq": {
-            "tipo": "VAL_STRING",
-            "valor": "el valor de a es: "
-          },
-          "opDer": {
-            "tipo": "VAL_ID",
-            "valor": "a"
-          },
-          "tipo": "OP_SUMA"
+          "tipo": "HTML",
+          "valor": "<HTML>"
         }
       },
       {
-        "tipo": "IN_WHILE",
-        "condicion": {
+        "tipo": "IN_RETURN",
+        "expresion": {
           "opIzq": {
             "tipo": "VAL_ID",
             "valor": "a"
           },
           "opDer": {
-            "tipo": "VAL_INT",
-            "valor": 10
+            "tipo": "VAL_ID",
+            "valor": "b"
           },
-          "tipo": "OP_MENOR"
+          "tipo": "OP_SUMA"
+        }
+      }
+    ]
+  },
+  {
+    "tipo": "IN_FUNCION",
+    "identificador": "resta",
+    "tipo_dato": "double",
+    "parametros": [
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "a",
+        "tipo_dato": "int"
+      },
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "b",
+        "tipo_dato": "double"
+      }
+    ],
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "<head>"
+        }
+      },
+      {
+        "tipo": "IN_RETURN",
+        "expresion": {
+          "opIzq": {
+            "tipo": "VAL_ID",
+            "valor": "a"
+          },
+          "opDer": {
+            "tipo": "VAL_ID",
+            "valor": "b"
+          },
+          "tipo": "OP_RESTA"
+        }
+      }
+    ]
+  },
+  {
+    "tipo": "IN_FUNCION",
+    "identificador": "multi",
+    "tipo_dato": "double",
+    "parametros": [
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "a",
+        "tipo_dato": "int"
+      },
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "b",
+        "tipo_dato": "double"
+      }
+    ],
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "<title>Mi Pagina</title>"
+        }
+      },
+      {
+        "tipo": "IN_RETURN",
+        "expresion": {
+          "opIzq": {
+            "tipo": "VAL_ID",
+            "valor": "a"
+          },
+          "opDer": {
+            "tipo": "VAL_ID",
+            "valor": "b"
+          },
+          "tipo": "OP_MULTIPLICACION"
+        }
+      }
+    ]
+  },
+  {
+    "tipo": "IN_FUNCION",
+    "identificador": "division",
+    "tipo_dato": "double",
+    "parametros": [
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "a",
+        "tipo_dato": "int"
+      },
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "b",
+        "tipo_dato": "double"
+      }
+    ],
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "</head>"
+        }
+      },
+      {
+        "tipo": "IN_RETURN",
+        "expresion": {
+          "opIzq": {
+            "tipo": "VAL_ID",
+            "valor": "a"
+          },
+          "opDer": {
+            "tipo": "VAL_ID",
+            "valor": "b"
+          },
+          "tipo": "OP_DIVISION"
+        }
+      }
+    ]
+  },
+  {
+    "tipo": "IN_METODO",
+    "identificador": "imprimirHTML",
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "<body style = \"background:yellow\">"
+        }
+      },
+      {
+        "tipo": "IN_RETURN"
+      }
+    ]
+  },
+  {
+    "tipo": "IN_METODO",
+    "identificador": "imprimirNormal",
+    "parametros": [
+      {
+        "tipo": "PARAMETRO",
+        "identificador": "impresion",
+        "tipo_dato": "string"
+      }
+    ],
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "<h1>[OLC1]Practica 1</h1>"
+        }
+      },
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_ID",
+          "valor": "impresion"
+        }
+      },
+      {
+        "tipo": "IN_IF",
+        "condicion": {
+          "opIzq": {
+            "opIzq": {
+              "tipo": "VAL_ID",
+              "valor": "a"
+            },
+            "opDer": {
+              "tipo": "VAL_ID",
+              "valor": "num1"
+            },
+            "tipo": "OP_MAYOR"
+          },
+          "opDer": {
+            "tipo": "VAL_BOOL",
+            "valor": "false"
+          },
+          "tipo": "OP_OR"
         },
         "instrucciones": [
           {
             "tipo": "IN_IMPRIMIR",
             "expresion": {
-              "opIzq": {
-                "tipo": "VAL_INT",
-                "valor": 43
-              },
-              "opDer": {
-                "opIzq": {
-                  "tipo": "AGRUPACION",
-                  "expresion": {
-                    "opIzq": {
-                      "tipo": "AGRUPACION",
-                      "expresion": {
-                        "opIzq": {
-                          "tipo": "VAL_INT",
-                          "valor": 23
-                        },
-                        "opDer": {
-                          "tipo": "VAL_INT",
-                          "valor": 43
-                        },
-                        "tipo": "OP_DIVISION"
-                      }
-                    },
-                    "opDer": {
-                      "tipo": "VAL_INT",
-                      "valor": 23
-                    },
-                    "tipo": "OP_SUMA"
-                  }
-                },
-                "opDer": {
-                  "tipo": "VAL_INT",
-                  "valor": 5
-                },
-                "tipo": "OP_MULTIPLICACION"
-              },
-              "tipo": "OP_SUMA"
+              "tipo": "HTML",
+              "valor": "<div style=\"background: white\">"
             }
+          }
+        ]
+      },
+      {
+        "tipo": "IN_ELSE",
+        "instrucciones": [
+          {
+            "tipo": "IN_IMPRIMIR",
+            "expresion": {
+              "tipo": "HTML",
+              "valor": "<h2>Encabezado h2</h2>"
+            }
+          },
+          {
+            "tipo": "IN_RETURN"
           }
         ]
       }
     ]
   },
   {
-    "tipo": "IN_FOR",
-    "condicion": {
-      "opIzq": {
-        "tipo": "VAL_ID",
-        "valor": "a"
+    "tipo": "IN_METODO",
+    "identificador": "menu",
+    "instrucciones": [
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_STRING",
+          "valor": "-!-!-!-!-!-!' ' MENU ' '!-!-!-!-!-!- \\n"
+        }
       },
-      "opDer": {
-        "tipo": "VAL_INT",
-        "valor": 10
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_STRING",
+          "valor": "\\tOpcion 1 \\n"
+        }
       },
-      "tipo": "OP_MENOR"
-    },
-    "paso": {
-      "tipo": "INCREMENTO",
-      "identificador": "a"
-    },
-    "variable": "a",
-    "valorVariable": {
-      "tipo": "VAL_INT",
-      "valor": 0
-    },
-    "tipo_dato": "int"
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_STRING",
+          "valor": "\\tOpcion 2 \\n"
+        }
+      },
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_STRING",
+          "valor": "\\tOpcion 3 \\n"
+        }
+      },
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "VAL_STRING",
+          "valor": "\\tOpcion 4 \\n"
+        }
+      },
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "<p>"
+        }
+      },
+      {
+        "tipo": "IN_DECLARACION",
+        "identificadores": [
+          "reader"
+        ],
+        "tipo_dato": "String",
+        "expresion": {
+          "tipo": "VAL_ID",
+          "valor": "entrada"
+        }
+      },
+      {
+        "tipo": "IN_IMPRIMIR",
+        "expresion": {
+          "tipo": "HTML",
+          "valor": "Este es un bloque<br>"
+        }
+      },
+      {
+        "tipo": "IN_SWITCH",
+        "condicion": {
+          "tipo": "VAL_ID",
+          "valor": "reader"
+        },
+        "casos": [
+          {
+            "condicion": {
+              "opIzq": {
+                "tipo": "VAL_STRING",
+                "valor": "No quiero entrar"
+              },
+              "opDer": {
+                "tipo": "VAL_ID",
+                "valor": "num1"
+              },
+              "tipo": "OP_SUMA"
+            },
+            "instrucciones": [
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "HTML",
+                  "valor": "de texto, para una<br>"
+                }
+              },
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "VAL_STRING",
+                  "valor": "Ingrese valor valido"
+                }
+              }
+            ]
+          },
+          {
+            "condicion": {
+              "tipo": "VAL_ID",
+              "valor": "a"
+            },
+            "instrucciones": [
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "HTML",
+                  "valor": "</p>"
+                }
+              },
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "VAL_STRING",
+                  "valor": "Ingrese valor valido"
+                }
+              },
+              {
+                "tipo": "IN_BREAK"
+              }
+            ]
+          },
+          {
+            "condicion": {
+              "tipo": "VAL_INT",
+              "valor": 1
+            },
+            "instrucciones": [
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "HTML",
+                  "valor": "<br>"
+                }
+              },
+              {
+                "tipo": "IN_IF",
+                "condicion": {
+                  "opIzq": {
+                    "tipo": "VAL_ID",
+                    "valor": "num1"
+                  },
+                  "opDer": {
+                    "tipo": "VAL_INT",
+                    "valor": 0
+                  },
+                  "tipo": "OP_DISTINTO"
+                },
+                "instrucciones": [
+                  {
+                    "tipo": "IN_IMPRIMIR",
+                    "expresion": {
+                      "tipo": "HTML",
+                      "valor": "</div>"
+                    }
+                  },
+                  {
+                    "tipo": "IN_ASIGNACION",
+                    "identificador": "num1",
+                    "expresion": {
+                      "tipo": "VAL_INT",
+                      "valor": 0
+                    }
+                  },
+                  {
+                    "tipo": "IN_DECLARACION",
+                    "identificadores": [
+                      "prueba"
+                    ],
+                    "tipo_dato": "double",
+                    "expresion": {
+                      "tipo": "VAL_STRING",
+                      "valor": "Error semantico gg"
+                    }
+                  },
+                  "!",
+                  "=",
+                  "hola",
+                  ")",
+                  ";",
+                  "}"
+                ]
+              },
+              {
+                "tipo": "IN_ELSE_IF",
+                "condicion": {
+                  "opIzq": {
+                    "tipo": "VAL_STRING",
+                    "valor": "Hola"
+                  },
+                  "opDer": {
+                    "tipo": "VAL_ID",
+                    "valor": "GG"
+                  },
+                  "tipo": "OP_AND"
+                },
+                "instrucciones": [
+                  {
+                    "tipo": "IN_IMPRIMIR",
+                    "expresion": {
+                      "tipo": "HTML",
+                      "valor": "<div style=\"background: skyblue\">"
+                    }
+                  },
+                  {
+                    "tipo": "IN_WHILE",
+                    "condicion": {
+                      "tipo": "VAL_BOOL",
+                      "valor": "true"
+                    },
+                    "instrucciones": [
+                      {
+                        "tipo": "IN_IMPRIMIR",
+                        "expresion": {
+                          "tipo": "HTML",
+                          "valor": "<h2>Llenar los campos</h2>"
+                        }
+                      },
+                      {
+                        "tipo": "IN_FOR",
+                        "condicion": {
+                          "opIzq": {
+                            "tipo": "VAL_ID",
+                            "valor": "i"
+                          },
+                          "opDer": {
+                            "tipo": "VAL_ID",
+                            "valor": "num5"
+                          },
+                          "tipo": "OP_MENOR"
+                        },
+                        "instrucciones": [
+                          {
+                            "tipo": "IN_IMPRIMIR",
+                            "expresion": {
+                              "tipo": "HTML",
+                              "valor": "<label>Ingrese su nombre:</label>"
+                            }
+                          },
+                          {
+                            "tipo": "IN_IF",
+                            "condicion": {
+                              "opIzq": {
+                                "tipo": "VAL_ID",
+                                "valor": "i"
+                              },
+                              "opDer": {
+                                "tipo": "VAL_INT",
+                                "valor": 2
+                              },
+                              "tipo": "OP_DOBLE_IGUAL"
+                            },
+                            "instrucciones": [
+                              {
+                                "tipo": "IN_IMPRIMIR",
+                                "expresion": {
+                                  "tipo": "HTML",
+                                  "valor": "<br>"
+                                }
+                              },
+                              {
+                                "tipo": "IN_BREAK"
+                              }
+                            ]
+                          },
+                          {
+                            "tipo": "IN_IMPRIMIR",
+                            "expresion": {
+                              "tipo": "HTML",
+                              "valor": "<input>"
+                            }
+                          }
+                        ],
+                        "paso": {
+                          "tipo": "INCREMENTO",
+                          "identificador": "i"
+                        },
+                        "variable": "i",
+                        "valorVariable": {
+                          "opIzq": {
+                            "tipo": "VAL_INT",
+                            "valor": 12
+                          },
+                          "opDer": {
+                            "tipo": "VAL_INT",
+                            "valor": 1
+                          },
+                          "tipo": "OP_RESTA"
+                        },
+                        "tipo_dato": "int"
+                      },
+                      {
+                        "tipo": "IN_BREAK"
+                      },
+                      {
+                        "tipo": "IN_IMPRIMIR",
+                        "expresion": {
+                          "tipo": "HTML",
+                          "valor": "<br>"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tipo": "IN_ELSE_IF",
+                "condicion": {
+                  "tipo": "VAL_ID",
+                  "valor": "Prueba"
+                },
+                "instrucciones": [
+                  {
+                    "tipo": "IN_IMPRIMIR",
+                    "expresion": {
+                      "tipo": "HTML",
+                      "valor": "<button>Mi boton</button>"
+                    }
+                  },
+                  {
+                    "tipo": "IN_DO_WHILE",
+                    "condicion": {
+                      "tipo": "VAL_BOOL",
+                      "valor": "true"
+                    },
+                    "instrucciones": [
+                      {
+                        "tipo": "IN_IMPRIMIR",
+                        "expresion": {
+                          "tipo": "HTML",
+                          "valor": "</div>"
+                        }
+                      },
+                      {
+                        "tipo": "IN_DECLARACION",
+                        "identificadores": [
+                          "arduino"
+                        ],
+                        "tipo_dato": "int",
+                        "expresion": {
+                          "tipo": "VAL_STRING",
+                          "valor": "Arqui esta saliendo sola :v"
+                        }
+                      },
+                      "!",
+                      "arduino",
+                      ")",
+                      ";",
+                      "}"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tipo": "IN_ELSE",
+                "instrucciones": [
+                  {
+                    "tipo": "IN_IMPRIMIR",
+                    "expresion": {
+                      "tipo": "HTML",
+                      "valor": "</body>"
+                    }
+                  },
+                  "(",
+                  "param",
+                  ",",
+                  "param2",
+                  ",",
+                  "param",
+                  ",",
+                  "true",
+                  "*",
+                  "false",
+                  ")",
+                  ";",
+                  "}"
+                ]
+              },
+              {
+                "tipo": "IN_BREAK"
+              }
+            ]
+          },
+          {
+            "condicion": {
+              "tipo": "VAL_INT",
+              "valor": 2
+            },
+            "instrucciones": [
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "HTML",
+                  "valor": "</HTML>"
+                }
+              },
+              "(",
+              "num1",
+              ",",
+              "num2",
+              ")",
+              ";",
+              "break",
+              {
+                "tipo": "IN_BREAK"
+              }
+            ]
+          },
+          {
+            "condicion": {
+              "tipo": "VAL_INT",
+              "valor": 3
+            },
+            "instrucciones": [
+              {
+                "tipo": "IN_SWITCH",
+                "condicion": {
+                  "opIzq": {
+                    "tipo": "VAL_ID",
+                    "valor": "num1"
+                  },
+                  "opDer": {
+                    "opIzq": {
+                      "tipo": "VAL_ID",
+                      "valor": "num2"
+                    },
+                    "opDer": {
+                      "tipo": "VAL_ID",
+                      "valor": "num3"
+                    },
+                    "tipo": "OP_MULTIPLICACION"
+                  },
+                  "tipo": "OP_SUMA"
+                },
+                "casos": [
+                  {
+                    "condicion": {
+                      "tipo": "VAL_INT",
+                      "valor": 1
+                    },
+                    "instrucciones": [
+                      {
+                        "tipo": "IN_IMPRIMIR",
+                        "expresion": {
+                          "tipo": "VAL_STRING",
+                          "valor": "Opcion 3 y la operacion es 1"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "tipo": "DEFAULT",
+                    "instrucciones": [
+                      "(",
+                      "num1",
+                      ",",
+                      "num2",
+                      ")",
+                      ";",
+                      "break",
+                      {
+                        "tipo": "IN_BREAK"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "DEFAULT",
+            "instrucciones": [
+              {
+                "tipo": "IN_IMPRIMIR",
+                "expresion": {
+                  "tipo": "VAL_STRING",
+                  "valor": "Default"
+                }
+              },
+              {
+                "tipo": "IN_BREAK"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tipo": "IN_MAIN",
+    "instrucciones": [
+      "(",
+      "num1",
+      ",",
+      "num2",
+      ")",
+      ";",
+      "resta",
+      "(",
+      "12",
+      "+",
+      "23121",
+      "/",
+      "2",
+      ",",
+      "hola",
+      ",",
+      "Hola",
+      ")",
+      ";",
+      "FF",
+      "(",
+      ")",
+      ";",
+      "}"
+    ]
   }
 ]
