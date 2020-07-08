@@ -111,12 +111,39 @@
             "tipo": "IN_IMPRIMIR",
             "expresion": {
               "opIzq": {
-                "tipo": "VAL_STRING",
-                "valor": "el valor de a es: "
+                "tipo": "VAL_INT",
+                "valor": 43
               },
               "opDer": {
-                "tipo": "VAL_ID",
-                "valor": "a"
+                "opIzq": {
+                  "tipo": "AGRUPACION",
+                  "expresion": {
+                    "opIzq": {
+                      "tipo": "AGRUPACION",
+                      "expresion": {
+                        "opIzq": {
+                          "tipo": "VAL_INT",
+                          "valor": 23
+                        },
+                        "opDer": {
+                          "tipo": "VAL_INT",
+                          "valor": 43
+                        },
+                        "tipo": "OP_DIVISION"
+                      }
+                    },
+                    "opDer": {
+                      "tipo": "VAL_INT",
+                      "valor": 23
+                    },
+                    "tipo": "OP_SUMA"
+                  }
+                },
+                "opDer": {
+                  "tipo": "VAL_INT",
+                  "valor": 5
+                },
+                "tipo": "OP_MULTIPLICACION"
               },
               "tipo": "OP_SUMA"
             }
@@ -124,5 +151,29 @@
         ]
       }
     ]
+  },
+  {
+    "tipo": "IN_FOR",
+    "condicion": {
+      "opIzq": {
+        "tipo": "VAL_ID",
+        "valor": "a"
+      },
+      "opDer": {
+        "tipo": "VAL_INT",
+        "valor": 10
+      },
+      "tipo": "OP_MENOR"
+    },
+    "paso": {
+      "tipo": "INCREMENTO",
+      "identificador": "a"
+    },
+    "variable": "a",
+    "valorVariable": {
+      "tipo": "VAL_INT",
+      "valor": 0
+    },
+    "tipo_dato": "int"
   }
 ]

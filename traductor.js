@@ -85,6 +85,14 @@ function traducir(tab, instrucciones){
 
 //Traducciones
 function traducirFor(tab, instruccion){
+	let variable = instruccion.variable;
+	let num = instruccion.condicion.opDer.valor;
+	if(instruccion.instrucciones != null){
+		let lista = traducir(tab + "\t", instruccion.instrucciones);
+		return tab + "for "+ variable + "in range(1,"+num+"):\n" + lista;
+	} else {
+		return tab + "for "+ variable + "in range(1,"+num+"):\n";
+	}
 
 }
 
