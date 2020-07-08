@@ -2,30 +2,143 @@
   {
     "tipo": "IN_DECLARACION",
     "identificadores": [
-      "variableInt_1"
+      "varInt1"
     ],
     "tipo_dato": "int",
     "expresion": {
-      "tipo": "VAL_INT",
-      "valor": 0
+      "tipo": "VAL_DOUBLE",
+      "valor": 0.4
     }
   },
   {
     "tipo": "IN_DECLARACION",
     "identificadores": [
-      "flag"
+      "varString1"
     ],
-    "tipo_dato": "bool",
+    "tipo_dato": "string",
+    "expresion": {
+      "tipo": "VAL_STRING",
+      "valor": "Esto es una cadena"
+    }
+  },
+  {
+    "tipo": "IN_DECLARACION",
+    "identificadores": [
+      "flag1"
+    ],
+    "tipo_dato": "bool"
+  },
+  {
+    "tipo": "IN_DECLARACION",
+    "identificadores": [
+      "token"
+    ],
+    "tipo_dato": "char",
+    "expresion": {
+      "tipo": "VAL_CHAR",
+      "valor": "3"
+    }
+  },
+  {
+    "tipo": "IN_DECLARACION",
+    "identificadores": [
+      "html"
+    ],
+    "tipo_dato": "String",
+    "expresion": {
+      "tipo": "HTML",
+      "valor": "<h1>hola Mundo!</h1>"
+    }
+  },
+  {
+    "tipo": "IN_ASIGNACION",
+    "identificador": "flag1",
     "expresion": {
       "tipo": "VAL_BOOL",
-      "valor": "true"
+      "valor": "false"
+    }
+  },
+  {
+    "tipo": "IN_ASIGNACION",
+    "identificador": "var1",
+    "expresion": {
+      "opIzq": {
+        "tipo": "VAL_DOUBLE",
+        "valor": 5.3
+      },
+      "opDer": {
+        "opIzq": {
+          "tipo": "VAL_INT",
+          "valor": 8
+        },
+        "opDer": {
+          "tipo": "VAL_INT",
+          "valor": 9
+        },
+        "tipo": "OP_MULTIPLICACION"
+      },
+      "tipo": "OP_SUMA"
+    }
+  },
+  {
+    "tipo": "IN_ASIGNACION",
+    "identificador": "html",
+    "expresion": {
+      "tipo": "HTML",
+      "valor": "<h1 style=\"white\">hola Mundo!</h1>"
+    }
+  },
+  "id4",
+  ",",
+  "id5",
+  {
+    "tipo": "IN_ASIGNACION",
+    "identificador": "id5",
+    "expresion": {
+      "tipo": "VAL_INT",
+      "valor": 100
     }
   },
   {
     "tipo": "IN_DECLARACION",
     "identificadores": [
-      "variableString"
+      "var1",
+      "var2",
+      "var3",
+      "var4",
+      "var5"
     ],
     "tipo_dato": "string"
-  }
+  },
+  {
+    "tipo": "IN_IMPRIMIR",
+    "expresion": {
+      "opIzq": {
+        "tipo": "VAL_STRING",
+        "valor": "el valor de a es: "
+      },
+      "opDer": {
+        "tipo": "VAL_ID",
+        "valor": "a"
+      },
+      "tipo": "OP_SUMA"
+    }
+  },
+  "return",
+  ";",
+  "return",
+  "(",
+  "5",
+  "*",
+  "5",
+  ")",
+  "/",
+  "5",
+  ";",
+  "434",
+  "break",
+  ";",
+  "continue",
+  ";",
+  ""
 ]
